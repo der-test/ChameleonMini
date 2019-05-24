@@ -78,10 +78,8 @@ VERSION<a id="version">
 
 Print the current version of ChameleonMini.<br>
 
-**Syntax:** `version?`
-
-*101:OK WITH TEXT
-
+**Syntax:** `version?`<br>
+*101:OK WITH TEXT<br>
 ChameleonMini RevG 180125 using LUFA 151115 compiled with AVR-GCC 5.4.0. Based on the open-source NFC tool ChameleonMini. https://github.com/emsec/ChameleonMini commit c6d2968*
 
 CONFIG<a id="config">
