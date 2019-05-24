@@ -6,8 +6,8 @@
 
 
 
-###This is a user friendly documentation for the [ChameleonMini](https://github.com/emsec/ChameleonMini/wiki)  (RevG 180125) from Kasper & Oswald GmbH.<br>
-###Feel free to add or adapt the documentation 
+### This is a user friendly documentation for the [ChameleonMini](https://github.com/emsec/ChameleonMini/wiki)  (RevG 180125) from Kasper & Oswald GmbH.<br>
+### Feel free to add or adapt the documentation 
 
 
 
@@ -655,7 +655,8 @@ Abbreviation<a id="abbr"></a>
 |**PCD**|Proximity Coupling Device (Cardreader)|
 |**ACK**|ACKnowledge|
 |**NAK**|Not AcKnowledge|
-|**ATQA**|Answer To reQuest, Type A||**NUID**|Non-Unique IDentifier|
+|**ATQA**|Answer To reQuest, Type A|
+|**NUID**|Non-Unique IDentifier|
 |**REQA**|REQuest command, Type A|
 |**SAK**|Select AcKnowledge, type A|
 |**UID**|Unique IDentifier|
