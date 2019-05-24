@@ -7,14 +7,14 @@
 
 
 ### This is a user friendly documentation for the [ChameleonMini](https://github.com/emsec/ChameleonMini/wiki)  (RevG 180125) from Kasper & Oswald GmbH.<br>
-### Feel free to add or adapt the documentation 
+### Feel free to add or adapt the documentation
 
 
 
 
 <a id="top">
 
-__Table of content__
+__Table of contents__
 
 - [VERSION](#version)
 - [CONFIG](#config)
@@ -58,7 +58,7 @@ __Table of content__
 
 Annex
 ----
-- [Abbreviation](#abbr)
+- [Abbreviations](#abbr)
 - [MIFARE Classic command overview](#mfc_commands)
 - [MIFARE Classic ACK and NAK](#acknak)
 - [ATQA and SAK responses](#atqasak)
@@ -137,7 +137,7 @@ UPLOAD<a id="upload"></a>
 ----
 ^[Top](#top)
 
-Waits for an XModem connection in order to upload a new virtualized card into the currently selected slot, with a size up to the current memory size. 
+Waits for an XModem connection in order to upload a new virtualized card into the currently selected slot, with a size up to the current memory size.
 
 **Syntax:** `upload`\<ENTER\><br>
 
@@ -154,7 +154,7 @@ RESET<a id="reset"></a>
 ----
 ^[Top](#top)
 
-Reboots the Chameleon, i.e., power down and subsequent power-up. Note: A reset usually requires a new Terminal session. 
+Reboots the Chameleon, i.e., power down and subsequent power-up. Note: A reset usually requires a new Terminal session.
 
 **Syntax:** `reset`\<ENTER\><br>
 
@@ -362,7 +362,7 @@ LOGMODE<a id="logmode"></a>
 ^[Top](#top)
 
 The 'logmode' command set the behavior of the datalogging.<br>
- 
+
 Possible values are:<br>
 **Syntax:** `logmode=?`<br>
 *101:OK WITH TEXT<br>
@@ -381,12 +381,12 @@ Set logging mode:<br>
 **Syntax:** `logmode=MEMORY`<br>
 *100:OK<br>*
 
-####Log Entry Format####
+#### Log Entry Format
 The log entries use a TLV (Type Length Value)-like format:
 
 - **Entry type** -> 1 byte, see possible types on [GitHub](*https://rawgit.com/emsec/ChameleonMini/master/Doc/Doxygen/html/_log_8h.html#a34112fbd78128ae58dc7801690dfa6e0)
 - **Data length** -> 1 byte, the length of the appended data
-- **Timestamp** -> 2 bytes, current systick timestamp value (ms) 
+- **Timestamp** -> 2 bytes, current systick timestamp value (ms)
 - **Data** -> Data length bytes, it's also possible that no data is appended, then the Data length field is zero
 
 
@@ -405,7 +405,7 @@ LOGDOWNLOAD<a id="logdownload"></a>
 ----
 ^[Top](#top)
 
-Waits for an XModem connection and then downloads the binary log - including any log data in FRAM. 
+Waits for an XModem connection and then downloads the binary log - including any log data in FRAM.
 
 **Syntax:** `logdownload`\<ENTER\><br>
 
@@ -414,21 +414,21 @@ LOGSTORE<a id="logstore"></a>
 ----
 ^[Top](#top)
 
-Writes the current log from SRAM to FRAM and clears the SRAM log. 
+Writes the current log from SRAM to FRAM and clears the SRAM log.
 
 **Syntax:** `logstore?`<br>
 *100:OK<br>*
 
 ***Warning***<br>
 If the FRAM is full, currently no error message is shown.<br>
-If calling `LOGMEM?` after executing this command returns any other value than the maximum SRAM log size, there was not sufficient space in the FRAM and nothing has been done. 
+If calling `LOGMEM?` after executing this command returns any other value than the maximum SRAM log size, there was not sufficient space in the FRAM and nothing has been done.
 
 
 LOGCLEAR<a id="logclear"></a>
 ----
 ^[Top](#top)
 
-Clears the log memory (SRAM on ATMega and FRAM on external RAM IC5) 
+Clears the log memory (SRAM on ATMega and FRAM on external RAM IC5)
 
 **Syntax:** `logclear`<ENTER\><br>
 *100:OK<br>*
@@ -445,7 +445,7 @@ Get the current slot number<br>
 1*
 
 Switch to slot 2<br>
-**Syntax:** `setting=2`<br> 
+**Syntax:** `setting=2`<br>
 *100:OK*
 
 CLEAR<a id="clear"></a>
@@ -559,16 +559,16 @@ TIMEOUT<a id="timeout"></a>
 ----
 ^[Top](#top)
 
-Get/Set the timeout for the current slot in multiples of 128 ms. If set to zero, there is no timeout. See also Timeout commands. 
+Get/Set the timeout for the current slot in multiples of 128 ms. If set to zero, there is no timeout. See also Timeout commands.
 
 Get the possible range<br>
-**Syntax:** `timeout=?`<br> 
+**Syntax:** `timeout=?`<br>
 *101:OK WITH TEXT<br>
 0 = no timeout<br>
 1-600 = 100 ms - 60000 ms timeout<br>*
 
 Get the current value<br>
-**Syntax:** `timeout?`<br> 
+**Syntax:** `timeout?`<br>
 *101:OK WITH TEXT<br>
 5000 ms<br>*
 
@@ -632,7 +632,7 @@ CLONE<a id="clone"></a>
 ^[Top](#top)
 
 Change `config` and `uid` to the identified card (mifare classic 1k/4k or ultralight).
-To check the progress, you can set the mod of the LEDs to *FIELD\_DETECTED* (`ledred=field_detected`) 
+To check the progress, you can set the mod of the LEDs to *FIELD\_DETECTED* (`ledred=field_detected`)
 
 (*In fact, it's not a really full clone of a card. It will be clone the Card-ID and switch the ChameleonMini in to the same cardtype as the "master". Nevertheless, this is enough to make penetration tests to low level systems, based only of Card-ID and/or Card-Type.*)
 
@@ -646,7 +646,7 @@ See [ISSUE #165](https://github.com/emsec/ChameleonMini/issues/165)
 Annex
 ----
 
-Abbreviation<a id="abbr"></a>
+Abbreviations<a id="abbr"></a>
 ----
 
 | |Description|
@@ -738,12 +738,12 @@ The asiest way is to setup a toolchain with UBUNTU (Physical or as VM). This exa
     **Syntax:** `sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude`\<ENTER\><br>
 
 3. Install [git](https://git-scm.com) ([HowTo](https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts)\):
-    
+
    **Syntax:** `apt-get update`\<ENTER\><br>
    **Syntax:** `apt-get install git-core`\<ENTER\><br>
-   
+
 4. Clone the ChameleonMini repo to local machine.
-   
+
    - create a target directory like '~git' **Syntax:** `mkdir ~/git`\<ENTER\><br>
    - change into the new drectory: **Syntax:** `cd ~/git`\<ENTER\><br>
    - clone the original repository to the current directory:<br>
@@ -752,11 +752,11 @@ The asiest way is to setup a toolchain with UBUNTU (Physical or as VM). This exa
 5. For remote access to the VM install [ssh](http://ubuntuhandbook.org/index.php/2016/04/enable-ssh-ubuntu-16-04-lts)
 
    **Syntax:** `sudo apt-get install openssh-server`\<ENTER\><br>
-   
+
 6. Edit the ChameleonMini source files:
 
    After cloning the git repository, you will find the firmwarefiles under `~/git/ChameleonMini/Firmware/Chameleon-Mini`
-   
+
 7. Compile the changes
 
    **Syntax:** `make`\<ENTER\><br>
@@ -796,7 +796,5 @@ The asiest way is to setup a toolchain with UBUNTU (Physical or as VM). This exa
 8. Upgrade the Firmware
 
    Start the upgrade process descripted on [Getting Started](https://rawgit.com/emsec/ChameleonMini/master/Doc/Doxygen/html/_page__getting_started.html) with both compiled files `Chameleon-Mini.eep` and `Chameleon-Mini.hex`.   
-    
-  That's it. Now, you have your own code :-)
 
-   
+  That's it. Now, you have your own code :-)
